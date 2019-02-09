@@ -21,10 +21,10 @@ def add_ssl_defines(header)
   $CFLAGS << ' -DNO_SSL_MODE_SUPPORT' if has_no_support
 end
 
-# $CFLAGS << ' --plugin-dir=/usr/lib/mariadb/plugin'
-$LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin'
-warn $CFLAGS
-warn $LDFLAGS
+$LDFLAGS << ' --plugin-dir=/usr/lib/mariadb/plugin'
+# $LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin'
+# warn $CFLAGS
+# warn $LDFLAGS
 
 # 2.1+
 have_func('rb_absint_size')
