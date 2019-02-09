@@ -21,7 +21,8 @@ def add_ssl_defines(header)
   $CFLAGS << ' -DNO_SSL_MODE_SUPPORT' if has_no_support
 end
 
-$CFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin'
+$CFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin --plugin-dir=/usr/lib/mariadb/plugin'
+$LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin --plugin-dir=/usr/lib/mariadb/plugin'
 
 # 2.1+
 have_func('rb_absint_size')
@@ -244,6 +245,7 @@ else
     warn "-----\nSetting mysql rpath to #{explicit_rpath}\n-----"
     $LDFLAGS << rpath_flags
   else
+    warn rpath_dir
     if (libdir = rpath_dir[%r{(-L)?(/[^ ]+)}, 2])
       rpath_flags = " -Wl,-rpath,#{libdir}"
       if RbConfig::CONFIG["RPATHFLAG"].to_s.empty? && try_link('int main() {return 0;}', rpath_flags)
