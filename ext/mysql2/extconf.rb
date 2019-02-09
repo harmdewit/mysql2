@@ -22,7 +22,7 @@ def add_ssl_defines(header)
 end
 
 # $CFLAGS << ' --plugin-dir=/usr/lib/mariadb/plugin'
-$LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin --plugin-dir=/usr/lib/mariadb/plugin'
+$LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin'
 
 # 2.1+
 have_func('rb_absint_size')
