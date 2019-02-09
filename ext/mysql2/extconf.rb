@@ -23,8 +23,8 @@ end
 
 # $CFLAGS << ' --plugin-dir=/usr/lib/mariadb/plugin'
 $LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin'
-puts $CFLAGS
-puts $LDFLAGS
+warn $CFLAGS
+warn $LDFLAGS
 
 # 2.1+
 have_func('rb_absint_size')
