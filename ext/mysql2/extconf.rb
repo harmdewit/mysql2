@@ -21,7 +21,7 @@ def add_ssl_defines(header)
   $CFLAGS << ' -DNO_SSL_MODE_SUPPORT' if has_no_support
 end
 
-$CFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin --plugin-dir=/usr/lib/mariadb/plugin'
+# $CFLAGS << ' --plugin-dir=/usr/lib/mariadb/plugin'
 $LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin --plugin-dir=/usr/lib/mariadb/plugin'
 
 # 2.1+
