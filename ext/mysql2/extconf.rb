@@ -22,7 +22,7 @@ def add_ssl_defines(header)
 end
 
 # $LDFLAGS << ' --with-opt-lib=/usr/lib'
-$LDFLAGS << ' -DINSTALL_PLUGINDIR=/usr/lib/mariadb/plugin'
+$CFLAGS << ' -DINSTALL_PLUGINDIR=/usr/lib/mariadb/plugin'
 # $LDFLAGS << ' -DPLUGIN_DIR=/usr/lib/mariadb/plugin'
 # warn $CFLAGS
 # warn $LDFLAGS
